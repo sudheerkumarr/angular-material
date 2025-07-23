@@ -1,0 +1,25 @@
+<a href="/posts/add">Add Post</a>
+<table>
+    <thead>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th rowspan="2">Actions</th>
+    </thead>
+    <tbody *ngFor="let p of posts">
+        <tr>
+
+            <td>{{p.userId}}</td>
+            <td>{{p.id}}</td>
+            <td>{{p.title}}</td>
+            <td>{{p.body}}</td>
+            <td>
+                <a [routerLink]="['/posts/update/'+p.id]">Edit</a>
+            </td>
+            <td>
+                <input type=" button" value="Delete" (click)="onDelete(p.id)" />
+            </td>
+        </tr>
+    </tbody>
+</table>

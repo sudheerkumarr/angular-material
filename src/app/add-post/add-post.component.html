@@ -1,0 +1,12 @@
+<form [formGroup]="postForm" (ngSubmit)="onAddPost()">
+    <input name="userId" type="number" formControlName="userId" placeholder=" Enter user id" /> <br />
+    <small *ngIf="postForm.get('userId').touched && postForm.get('userId').invalid">Please enter valid userId</small>
+    <input name="id" type="number" formControlName="id" placeholder="Enter id" /><br />
+    <small *ngIf="postForm.get('id').touched && postForm.get('id').invalid">Please enter valid id</small>
+    <input name=" title" type="text" formControlName="title" placeholder="Enter title" /><br />
+    <small *ngIf="postForm.get('title').touched && postForm.get('title').invalid">Please enter valid title. min length
+        3 chars. alphabets alone allowed</small>
+    <input name=" body" type="text" formControlName="body" placeholder="Enter Body" /><br />
+    <small *ngIf="postForm.get('body').touched && postForm.get('body').invalid">Please enter body</small>
+    <input type="submit" value="Add" [disabled]="postForm.invalid" />
+</form>

@@ -1,0 +1,8 @@
+<form [formGroup]="postUpdateForm" (ngSubmit)="onSubmit()">
+    <input name="userId" type="number" formControlName="userId" value={{post.userId}} placeholder=" Enter user id" />
+    <br />
+    <input name="id" type="number" formControlName="id" value={{post.id}} placeholder="Enter id" /><br />
+    <input name="title" type="text" formControlName="title" value={{post.title}} placeholder="Enter title" /><br />
+    <input name="body" type="text" formControlName="body" value={{post.body}} placeholder="Enter Body" /><br />
+    <input type="submit" value="Update" />
+</form>
